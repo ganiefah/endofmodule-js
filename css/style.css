@@ -17,12 +17,12 @@ body{
 }
 
 .navbar{
-    background-color: #716c68 ;
+    background-color: transparent ;
 }
 
 /* navlink  */
 .nav-link{
-    color: rgb(189, 181, 181) !important;
+    color: rgb(73, 69, 69) !important;
 }
 
 .nav-link:hover{
@@ -30,11 +30,56 @@ body{
     background-color: rgb(155, 74, 74) !important;
 }
 
+/* home page background  */
+.home{
+background-image: url(https://i.postimg.cc/dVMjvm3D/hermes-rivera-a-K6-WGqxy-HFw-unsplash.jpg) !important;
+    position:relative;
+    background-size: cover;
+    height: 110vh;
+    width: 100%;
+}
+
+/* header for home page  */
+.heading {
+    color: white;
+    position: absolute;
+    display: flex;
+    justify-content: start;
+    max-width: 460px;
+    top: 21rem;
+    left: 3rem;
+    font-weight: bold;
+}
+
+/* button on home page  */
+.view{
+display: flex !important;
+justify-content: center !important;
+align-items: center !important;
+margin-top: 10px !important;
+text-align: center !important;
+}
+
+/* customise the button  */
+.see{
+    color: white;
+    background-color: rgb(73, 69, 69);
+    height: 30px;
+    width: 100px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.row{
+    justify-content: space-between !important;
+    padding: 10px !important;
+}
+
 
   /* footer  */
 footer{
-    background-color: #716c68 !important;
-    color: white !important;
+    background-color: transparent !important;
+    color:  rgb(73, 69, 69) !important;
     display: flex;
     justify-content: center;
     align-items: center;
