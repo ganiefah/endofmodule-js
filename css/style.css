@@ -27,12 +27,12 @@ body{
 
 .nav-link:hover{
     color: white !important;
-    background-color: rgb(155, 74, 74) !important;
+    background-color:rgb(119, 210, 119)!important;
 }
 
 /* home page background  */
 .home{
-background-image: url(https://i.postimg.cc/dVMjvm3D/hermes-rivera-a-K6-WGqxy-HFw-unsplash.jpg) !important;
+background-image: url(https://i.postimg.cc/zBpSw6vx/prudence-earl-Nw-Bx723-Xa-Hw-unsplash.jpg) !important;
     position:relative;
     background-size: cover;
     height: 110vh;
@@ -41,10 +41,11 @@ background-image: url(https://i.postimg.cc/dVMjvm3D/hermes-rivera-a-K6-WGqxy-HFw
 
 /* header for home page  */
 .heading {
-    color: white;
+    color: rgb(119, 210, 119);
+    text-shadow: 2px 2px white;
     position: absolute;
-    display: flex;
-    justify-content: start;
+    display: flex !important;
+    justify-content: start !important;
     max-width: 460px;
     top: 21rem;
     left: 3rem;
@@ -62,8 +63,8 @@ text-align: center !important;
 
 /* customise the button  */
 .see{
-    color: white;
-    background-color: rgb(73, 69, 69);
+    color:rgb(119, 210, 119);
+    background-color:white;
     height: 30px;
     width: 100px;
     border-radius: 5px;
@@ -71,14 +72,25 @@ text-align: center !important;
     margin-bottom: 7px !important;
 }
 
+.see:hover{
+    color: white;
+    background-color: rgb(119, 210, 119);
+}
+
 .row{
     justify-content: space-between !important;
     padding: 10px !important;
 }
 
+.featured{
+    font-weight: bold !important;
+    text-decoration: 2px underline rgb(119, 210, 119);
+}
+
+
 /* contact page  */
 .contact{
-    background-image: url(https://i.postimg.cc/HLzYyBmS/Screenshot-2023-06-12-085841.png);
+    background-image: url(https://i.postimg.cc/Rq5dsf1F/Screenshot-2023-06-12-110246.png);
     position:relative;
     background-size: cover;
     height: 110vh;
