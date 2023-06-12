@@ -72,11 +72,6 @@ text-align: center !important;
     margin-bottom: 7px !important;
 }
 
-/* .roo{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-} */
 
 .see:hover{
     color: white;
@@ -93,21 +88,64 @@ text-align: center !important;
     text-decoration: 2px underline rgb(119, 210, 119);
 }
 
-
-/* product page  */
-/* .modal{
-    color: rgb(119, 210, 119);
-    background-color: gray;
+/* about page  */
+.info{
+    display: inline-flex !important;
 }
 
-.modal:hover{
-    background-color: rgb(119, 210, 119);
-    color: white;
-} */
+.info1{
+    display: inline-flex !important;
+    flex-direction: row-reverse;
+}
+
+.j{
+    font-size: 15px;
+}
+
+
+/* about page  */
+.img{
+    width: 100%;
+    height: 200px;
+}
+
+.img1{
+    width: 100%;
+    height: 175px;
+}
+
+.j{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.k{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.head{
+    text-align: center;
+}
+
+span{
+    color: rgb(119, 210, 119);
+}
+
+/* product page  */
+.price{
+    text-decoration: line-through ;
+    color: red !important;
+}
+
 
 /* contact page  */
 .contact{
-    background-image: url(https://i.postimg.cc/Rq5dsf1F/Screenshot-2023-06-12-110246.png);
+    background-image: url(https://i.postimg.cc/fRXjQgxV/Screenshot-2023-06-12-203006.png);
     position:relative;
     background-size: cover;
     height: 110vh;
@@ -120,8 +158,8 @@ text-align: center !important;
 .form-label{
  font-weight: bold;
  font-size: 25px;
- color:  rgb(73, 69, 69) ;
- text-shadow: 2px 2px white;
+ color: white ;
+ text-shadow: 2px 2px rgb(27, 190, 68);
 }
 
 input{
@@ -140,26 +178,83 @@ textarea{
 }
 
 .btn:hover{
-    color:rgb(155, 74, 74) !important ;
-    background-color: white !important;
+    color:white;
+    background-color: rgb(119, 210, 119) !important;
 }
 
 /* admin page  */
 .add{
     float: right;
-    background-color:rgb(119, 210, 119);
-    color: white;
+    background-color: grey;
+    color: black;
     width: 50px;
     border-radius: 5px;
 }
 
+/* .page{
+    background-image: url(https://i.postimg.cc/cJ9g8RWR/augustine-wong-T0-BYurb-DK-M-unsplash.jpg) ;
+    background-size: cover;
+    width: 100%;
+} */
+
+
+.add:hover{
+    background-color: grey;
+    color: white;
+}
+
 .sort{
     float: left;
-    background-color:rgb(119, 210, 119);
+    background-color:grey;
+    color: black;
+    width: 50px;
+    border-radius: 5px;
+    margin-bottom: 7px !important;
+}
+
+.sort:hover{
+    background-color: grey;
     color: white;
+}
+
+.edit{
+    background-color: grey;
+    color: black;
+    width: 50px;
+    border-radius: 5px;
+    margin-bottom: 7px !important;
+}
+
+.edit:hover{
+    background-color: grey;
+    color: white;
+}
+
+.del{
+    background-color: red;
+    color: black;
     width: 50px;
     border-radius: 5px;
 }
+
+.del:hover{
+    background-color: red;
+    color: white;
+}
+
+table,
+ th, 
+ td {
+    border: 1px solid black !important;
+    
+  }
+
+  /* checkout page  */
+#checkout{
+    text-align: center !important;
+    text-decoration:2px underline !important;
+}
+
 
   /* footer  */
 footer{
@@ -170,3 +265,50 @@ footer{
     align-items: center;
 }
 
+/* @media screen and (max-width: 1000px) {
+ 
+    /* about page  */
+    /* .info{
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+    
+    .info1{
+        display: flex !important;
+       justify-content: center !important;
+       align-items: center !important;
+    }
+    
+    .j{
+        font-size: 15px;
+    }
+    
+    .img{
+        width: 100%;
+        height: 200px;
+    }
+    
+    .img1{
+        width: 100%;
+        height: 175px;
+    }
+    
+    .j{
+        padding: 15px;
+    }
+    
+    .k{
+        padding: 15px;
+    }
+    
+    .head{
+        text-align: center;
+    }
+    
+    span{
+        color: rgb(119, 210, 119);
+    }
+    
+    
+}  */
