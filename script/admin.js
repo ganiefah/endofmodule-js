@@ -89,7 +89,35 @@ let data=
             image: 'https://i.postimg.cc/4xsNzJ2G/Screenshot-2023-06-12-142111.png',
             price: 'R 430,00' ,
             modal: 'Take this magnificent onion grass with a touch of the wild to bring in the outdoors; it is the ideal decorative element to liven up your living space instantly. It comes in a sturdy and stylish cement pot that accentuates and complements a range of home décor styles for maximum versatility.',
-          }
+          },
+          {
+            id:13,
+            title:'Biogrow Biotrissol ',
+            image: 'https://i.postimg.cc/Ls6Ttfkn/biogrow-biotrissol-organic-liquid-fertilizer-sku3824.jpg',
+            price: 'R 50,00',
+            modal: "This organic liquid fertilizer is a natural fermentation product gained from processing sugar beet. It contains a combination of essential nutrients in an organically assimilated form. The vitamins, ferments and growth-promoting substances contained in Biotrissol strengthen the plants and promote the formation of blooms. Biotrissol also provides nutrients for the micro-organisms in the soil and thus help to reactivate the soil."
+          },
+          {
+            id:14,
+            title:'Biogrow Pyrol (Insecticide)',
+            image: 'https://i.postimg.cc/CxWvgdb1/biogrow-pyrol-insecticide-250ml-sku3827v1-1.png',
+            price:'R 60,00',
+            modal: 'This product provides broad-spectrum control. It can be used as a dormant and growing season insect spray and kills all stages of insects, including eggs, on contact. It is a proprietary formulation consisting only of naturally occurring plant oils as active ingredients. It is truly an insecticide from plants for plants. It does not contain piperonyl butoxide as a synergist, and the active ingredients do not persist in the environment.',
+          },
+          {
+            id:15,
+            title:'Biogrow Copper (Fungicide)',
+            image: 'https://i.postimg.cc/GmJBc5yy/biogrow-copper-soap-fungicide-sku3825.jpg',
+            price: 'R 100,00',
+            modal: 'This product will control fungal diseases such as: Powdery mildew and downy mildew on vegetables and ornamentals; rust on ornamentals.',
+          },
+          {
+            id:16,
+            title:'Natural Herbicidal Soap',
+            image: 'https://i.postimg.cc/L5kdqwFc/biogrow-finalsan-natural-herbicidal-soap-sku3830.jpg',
+            price: 'R 75,00' ,
+            modal: 'Finalsan is a natural herbicide for the control of annual weeds, moss and algae. The active ingredients are naturally occurring fatty acids extracted from plants. They are soft on the environment and safe to use. Finalsan will control moss and algae on structural surfaces and does not stain concrete, brick or wood surfaces.',
+          },
         ]
 
     ))
@@ -101,16 +129,16 @@ let data=
     let p = document.querySelector('#admin');
     console.log(data[products]);
     p.innerHTML +=`
-    <div class="table-responsive">
+    <div class="table">
     <tbody id="admin">
-      <tr>
-        <th scope="row">#1</th>
-        <td>${stuff.title}</td>
-        <td>${stuff.image}</td>
-        <td>${stuff.price}</td>
-        <td><button>Edit</button></td>
-        <td><button>Delete</button></td>
-      </tr>
+    <tr>
+    <th scope="col">${stuff.id}</th>
+    <th scope="col">${stuff.title}</th>
+    <th scope="col">${stuff.image}</th>
+    <th scope="col">${stuff.price}</th>
+    <th scope="col"><button class="edit">Edit</button></th>
+    <th scope="col"><button class= "del">X</button></th>
+    </tr>
     </tbody>
     </div>
     `

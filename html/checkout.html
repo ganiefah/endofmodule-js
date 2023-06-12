@@ -27,6 +27,9 @@
                 <a class="nav-link active" aria-current="page" href="/index.html">Home Page</a>
               </li>
               <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/html/about.html">About Us </a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link" href="./products.html">Catalog</a>
               </li>
               <li class="nav-item">
@@ -42,124 +45,53 @@
           </div>
         </div>
       </nav>
-<!-- 
+
       <main>
-        <h1 class="display-1" id="h14">Checkout</h1>
+        <h4 class="display-1" id="checkout">Checkout</h4>
         <div class="row">
           <div class="col-75">
             <div class="container1">
               <form action="/action_page.php">
                 <div class="row">
                   <div class="col-100">
-                    <h3>Billing Address</h3>
-                    <label for="fname"
-                      ><i class="fa fa-user"></i> Full Name</label
-                    >
-                    <input
-                      type="text"
-                      id="fname"
-                      name="firstname"
-                      placeholder="Laiquah Cotie"
-                    />
-                    <label for="email"
-                      ><i class="fa fa-envelope"></i>Email Address:</label
-                    >
-                    <input
-                      type="text"
-                      id="email"
-                      name="email"
-                      placeholder="name@gmail.com"
-                    />
-                    <label for="adr"
-                      ><i class="fa fa-address-card-o"></i>Street Address:</label
-                    >
-                    <input
-                      type="text"
-                      id="adr"
-                      name="address"
-                      placeholder="8 Myna Street"
-                    />
-                    <label for="city"
-                      ><i class="fa fa-institution"></i>Suburb && Town/City :</label
-                    >
-                    <input
-                      type="text"
-                      id="city"
-                      name="city"
-                      placeholder="Pelican Park, Cape Town"
-                    />
+                    <!-- <h3>Billing Address</h3> -->
+                    <label for="name"><i class="fa fa-user"></i>Please Enter Full Name</label>
+                    <input type="text" id="fname" name="firstname" placeholder="John Slack" required="name"/>
+
+                    <label for="email"><i class="fa fa-envelope"></i> Please Enter Email Address:</label>
+                    <input type="text" id="email" name="email" placeholder="person@gmail.com" required="email"/>
+
+                    <label for="address"><i class="fa fa-address-card-o"></i>Street Address:</label>
+                    <input type="text"id="adr"name="address"placeholder="Street" required="street"/>
+
+                    <label for="city"><i class="fa fa-institution"></i>Suburb & Town/City :</label>
+                    <input type="text"id="city"name="city" placeholder="Parow & Cape Town" required="suburb"/>
                     <div class="row">
+
                       <div class="col-30">
                         <label for="state">Province:</label>
-                        <input
-                          type="text"
-                          id="state"
-                          name="state"
-                          placeholder="Western Cape"
-                        />
+                        <input type="text" id="state"name="state"placeholder="Western Cape" required="province" />
                       </div>
+
                       <div class="col-30">
                         <label for="zip">Postal Code:</label>
-                        <input
-                          type="text"
-                          id="zip"
-                          name="zip"
-                          placeholder="7941"
-                        />
+                        <input type="text" id="zip" name="zip" placeholder="7500" required="postal" />
                       </div>
+
                     </div>
                   </div>
                   <div class="col-30">
                     <h3>Payment</h3>
                     <label for="cname">Name on Card</label>
-                    <input
-                      type="text"
-                      id="cname"
-                      name="cardname"
-                      placeholder="Miss LS Cotie"
-                    />
+                    <input type="text" id="cname" name="cardname"placeholder="Name" required="nav-item"/>
                     <label for="ccnum">Credit card number</label>
-                    <input
-                      type="text"
-                      id="ccnum"
-                      name="cardnumber"
-                      placeholder="xxxxxxxxxxxxxxxx"
-                    />
+                    <input type="text"id="ccnum" name="cardnumber" placeholder="xxxxxxxxxxxxxxxx" required="number"/>
                     <label for="expmonth">Exp Month</label>
-                    <input
-                      type="text"
-                      id="expmonth"
-                      name="expmonth"
-                      placeholder="September"
-                    />
-                    <div class="row">
-                      <div class="col-30">
-                        <label for="expyear">Exp Year</label>
-                        <input
-                          type="text"
-                          id="expyear"
-                          name="expyear"
-                          placeholder="2018"
-                        />
-                      </div>
+                    <input type="text" id="expmonth" name="expmonth"placeholder="00/00" required="number"/>
                       <div class="col-30">
                         <label for="cvv">CVV</label>
-                        <input
-                          type="text"
-                          id="cvv"
-                          name="cvv"
-                          placeholder="352"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <input type="submit" value="Continue to checkout" class="btn" />
-              </form>
-            </div>
-          </div>
-        </div>
-      </main> -->
+                        <input type="text" id="cvv" name="cvv"  placeholder="352" required="number" />
+    
 
       <!-- FOOTER  -->
       <footer class="container-fluid">

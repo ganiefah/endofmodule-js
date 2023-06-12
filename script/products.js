@@ -198,3 +198,73 @@ cata.forEach((data, i)=> {
  `
 })
 
+let ca= [{
+  id:13,
+  title:'Biogrow Biotrissol ',
+  image: 'https://i.postimg.cc/Ls6Ttfkn/biogrow-biotrissol-organic-liquid-fertilizer-sku3824.jpg',
+  price: 'R 100,00' ,
+  price2: 'R 50,00',
+  modal: "This organic liquid fertilizer is a natural fermentation product gained from processing sugar beet. It contains a combination of essential nutrients in an organically assimilated form. The vitamins, ferments and growth-promoting substances contained in Biotrissol strengthen the plants and promote the formation of blooms. Biotrissol also provides nutrients for the micro-organisms in the soil and thus help to reactivate the soil."
+},
+{
+  id:14,
+  title:'Biogrow Pyrol (Insecticide)',
+  image: 'https://i.postimg.cc/CxWvgdb1/biogrow-pyrol-insecticide-250ml-sku3827v1-1.png',
+  price: 'R 170,00' ,
+  price2:'R 60,00',
+  modal: 'This product provides broad-spectrum control. It can be used as a dormant and growing season insect spray and kills all stages of insects, including eggs, on contact. It is a proprietary formulation consisting only of naturally occurring plant oils as active ingredients. It is truly an insecticide from plants for plants. It does not contain piperonyl butoxide as a synergist, and the active ingredients do not persist in the environment.',
+},
+{
+  id:15,
+  title:'Biogrow Copper (Fungicide)',
+  image: 'https://i.postimg.cc/GmJBc5yy/biogrow-copper-soap-fungicide-sku3825.jpg',
+  price: 'R 200,00' ,
+  price2:'R100,00',
+  modal: 'This product will control fungal diseases such as: Powdery mildew and downy mildew on vegetables and ornamentals; rust on ornamentals.',
+},
+{
+  id:16,
+  title:'Natural Herbicidal Soap',
+  image: 'https://i.postimg.cc/L5kdqwFc/biogrow-finalsan-natural-herbicidal-soap-sku3830.jpg',
+  price: 'R 145,00' ,
+  price2:'R75,00',
+  modal: 'Finalsan is a natural herbicide for the control of annual weeds, moss and algae. The active ingredients are naturally occurring fatty acids extracted from plants. They are soft on the environment and safe to use. Finalsan will control moss and algae on structural surfaces and does not stain concrete, brick or wood surfaces.',
+},
+]
+let divCa = document.querySelector('#pro');
+ca.forEach((data, i)=> {
+  divCa.innerHTML += 
+  `
+  <div class="card" style="width: 18rem;">
+  <div class="card-body">
+  <p class="text-black card-title">
+  ${data.title}
+  </p>
+  <img src= "${data.image}" class="img-fluid">
+  </p>
+  <p class="price">${data.price}</p> <p class="text-black">${data.price2}</p>
+  <button type="button"  class="btn btn-outline-success " data-bs-toggle="modal" data-bs-target="#${data.id}">
+  Read More
+  </button>
+  <div class="modal fade" id="${data.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+      <p>${data.modal}</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+    </div>
+  </div>
+</div>
+</div>
+  <a href="/html/checkout.html" role="button" class="btn">Add To Cart</a>
+  </div>
+  </div>
+ `
+})
+
