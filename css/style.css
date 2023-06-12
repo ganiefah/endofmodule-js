@@ -68,6 +68,7 @@ text-align: center !important;
     width: 100px;
     border-radius: 5px;
     text-decoration: none;
+    margin-bottom: 7px !important;
 }
 
 .row{
@@ -75,6 +76,44 @@ text-align: center !important;
     padding: 10px !important;
 }
 
+/* contact page  */
+.contact{
+    background-image: url(https://i.postimg.cc/HLzYyBmS/Screenshot-2023-06-12-085841.png);
+    position:relative;
+    background-size: cover;
+    height: 110vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-label{
+ font-weight: bold;
+ font-size: 25px;
+ color:  rgb(73, 69, 69) ;
+ text-shadow: 2px 2px white;
+}
+
+input{
+ width: 290px !important;
+ font-weight: bold;
+
+}
+
+textarea{
+    width: 290px !important;
+}
+
+/* button of contact  */
+.btn{
+    color:rgb(73, 69, 69) ;
+}
+
+.btn:hover{
+    color:rgb(155, 74, 74) !important ;
+    background-color: white !important;
+}
 
   /* footer  */
 footer{
