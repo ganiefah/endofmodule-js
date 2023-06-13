@@ -149,57 +149,65 @@ let data=
     <td scope="col">${stuff.title}</td>
     <td scope="col" class="pics"> <img src="${stuff.image}"  alt="" loading="lazy" class="adminPics" ></td>
     <td scope="col">${stuff.price}</td>
-    <td scope="col"><button class="edit">Edit</button></td>
-    <td scope="col"><button class= "del">X</button></td>
+    <td scope="col"><button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#editModal">
+    Edit
+  </button>
+  <!-- Modal -->
+  <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="editModalLabel">Edit your product</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+        <form>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">ID:</label>
+          <input type="ID" class="form-control" id="idAdmin" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Product name:</label>
+          <input type="Product" class="form-control" id="name" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Image URL:</label>
+          <input type="text" class="form-control" id="imageUrl" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Price:</label>
+          <input type="Price" class="form-control" id="priceAdmin" aria-describedby="emailHelp">
+        </div>
+      </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="saveBtn">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</td>
+    <td scope="col"><button class="del" id="delete">X</button></td>
     </tr>
     </tbody>
     </div>
     `
   });
 
- let products = JSON.parse(localStorage.getItem('products'));
-let add = document.querySelector('#add')
-// Buttons
-let delete_button = document.querySelectorAll("#delete_btn")
-let nameBook = document.querySelector('#name')
-let author= document.querySelector('#author')
-let price = document.querySelector('#price')
-let picture = document.querySelector('#picture')
-let adminInput = document.querySelector('#adminInput')
-let title = document.querySelector('#title')
-// function delete_button() {
-//     del_btn = [...document.querySelectorAll("#delete_btn")];
-//     del_btn.forEach((products)=>{
-//         products.addEventListener('click', del)
-//     })
-// }
-// function del(event) {
-//     adminInput.innerHTML = ""
-//     let start = del_btn.indexOf(event.target);
-//     products.splice(start, 1);
-//     bookData()
-// }
-addbook.addEventListener('click', addData)
-function addData(e){
-    e.preventDefault();
-    if(nameBook.value == '' && author.value == ''){
-      alert('Inputs are empty')
-    } else{
-      products.push({
-          id: 1,
-          picture: picture.value,
-          name: nameBook.value,
-          title: title.value,
-          cost: price.value,
-      })
-    }
-    nameBook.value = ''
-    author.value = ''
-    price.value = ''
-    picture.value = ''
-    adminInput.value = ''
-    title.value = ''
-    bookData()
-    localStorage.setItem('products', JSON.stringify(products))
-}
+const deleteButtons = [...document.querySelectorAll('#delete')]
+
+deleteButtons.forEach((dell,i)=>{
+  console.log(dell)
+  dell.addEventListener('click',(e)=>{
+    console.log(e.target)
+    let row = e.target.parentElement.parentElement
+    console.log(row)
+    row.remove()
+    console.log(data[i])
+    data.splice(e.target[i],1)
+    localStorage.setItem('products',JSON.stringify(data))
+    console.log(data)
+  })
+})
 
