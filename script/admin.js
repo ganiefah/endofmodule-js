@@ -1,15 +1,13 @@
 
-
-
-
 let data= 
     JSON.parse(localStorage.getItem("products")) ?
     JSON.parse(localStorage.getItem("products")) :
     localStorage.setItem('products', 
     JSON.stringify(
-        [
+        [ 
         {
             id:1,
+            category: 'indoor',
             title:'Paricha',
             image: 'https://i.postimg.cc/9Qp0J7yQ/19248-Parchira-1.jpg',
             price: 'R 650,00' ,
@@ -17,6 +15,7 @@ let data=
         },
         {
             id:2,
+            category: 'indoor',
             title:'Dracaena',
             image: 'https://i.postimg.cc/fTkBSCzj/17634-Dracaena.jpg',
             price: 'R 770,00' ,
@@ -24,6 +23,7 @@ let data=
         },
         {
             id:3,
+            category: 'indoor',
             title:'Caladium',
             image: 'https://i.postimg.cc/hjZgMsHb/18147-Caladium.jpg',
             price: 'R 390,00' ,
@@ -31,12 +31,14 @@ let data=
         },
         {
             id:4,
+            category: 'indoor',
             title:'Monstera',
             image: 'https://i.postimg.cc/mgh8vwz6/17753-Monstera.jpg',
             price: 'R 180,00' ,
             modal: 'Monstera deliciosa is a favourite plant among decorators thanks to its dramatic and unusual leaves, and it is also an ideal plant to attract money and good fortune according to Feng Shui.',
         },{
             id:5,
+            category: 'outdoor',
             title:'Oak Bonsai Tree',
             image: 'https://i.postimg.cc/0Qnrv7hb/20992-Oak-Bonsai-Tree.jpg',
             price: 'R 490,00' ,
@@ -44,6 +46,7 @@ let data=
           },
           {
             id:6,
+            category: 'outdoor',
             title:'Fern Tree',
             image: 'https://i.postimg.cc/j2RBBNQM/14881-Fern-Tree.jpg',
             price: 'R 500,00' ,
@@ -51,6 +54,7 @@ let data=
           },
           {
             id:7,
+            category: 'outdoor',
             title:'Olive Tree',
             image: 'https://i.postimg.cc/63N95MNc/19849-Olive-Tree.jpg',
             price: 'R 350,00' ,
@@ -58,12 +62,14 @@ let data=
           },
           {
             id:8,
+            category: 'outdoor',
             title:'Bay Tree',
             image: 'https://i.postimg.cc/446rgJdr/19857-Bay-Tree.jpg',
             price: 'R 950,00' ,
             modal: ' The bay tree is used as a valuable flavoring agent in the culinary and food industry. This plant is used in folk medicine, in stomachic and carminative remedies, and for the treatment of digestive disease.',
           },{
             id:9,
+            category: 'best sellers',
             title:'Snowball Tree',
             image: 'https://i.postimg.cc/bNMW4yjc/19819-Snowball-Tree-B.jpg',
             price: 'R 1050,00' ,
@@ -71,6 +77,7 @@ let data=
           },
           {
             id:10,
+            category: 'best sellers',
             title:'Zebrina Plant',
             image: 'https://i.postimg.cc/QtW7K8VD/Screenshot-2023-06-12-141357.png',
             price: 'R 425,00' ,
@@ -78,6 +85,7 @@ let data=
           },
           {
             id:11,
+            category: 'best sellers',
             title:'String Of Pearls Plant',
             image: 'https://i.postimg.cc/yNZ5xB14/Screenshot-2023-06-12-141105.png',
             price: 'R 400,00' ,
@@ -85,6 +93,7 @@ let data=
           },
           {
             id:12,
+            category: 'best sellers',
             title:'Onion Grass ',
             image: 'https://i.postimg.cc/4xsNzJ2G/Screenshot-2023-06-12-142111.png',
             price: 'R 430,00' ,
@@ -92,6 +101,7 @@ let data=
           },
           {
             id:13,
+            category: 'sale',
             title:'Biogrow Biotrissol ',
             image: 'https://i.postimg.cc/Ls6Ttfkn/biogrow-biotrissol-organic-liquid-fertilizer-sku3824.jpg',
             price: 'R 50,00',
@@ -99,6 +109,7 @@ let data=
           },
           {
             id:14,
+            category: 'sale',
             title:'Biogrow Pyrol (Insecticide)',
             image: 'https://i.postimg.cc/CxWvgdb1/biogrow-pyrol-insecticide-250ml-sku3827v1-1.png',
             price:'R 60,00',
@@ -106,6 +117,7 @@ let data=
           },
           {
             id:15,
+            category: 'sale',
             title:'Biogrow Copper (Fungicide)',
             image: 'https://i.postimg.cc/GmJBc5yy/biogrow-copper-soap-fungicide-sku3825.jpg',
             price: 'R 100,00',
@@ -113,6 +125,7 @@ let data=
           },
           {
             id:16,
+            category: 'sale',
             title:'Natural Herbicidal Soap',
             image: 'https://i.postimg.cc/L5kdqwFc/biogrow-finalsan-natural-herbicidal-soap-sku3830.jpg',
             price: 'R 75,00' ,
@@ -132,14 +145,61 @@ let data=
     <div class="table">
     <tbody id="admin">
     <tr>
-    <th scope="col">${stuff.id}</th>
-    <th scope="col">${stuff.title}</th>
-    <th scope="col">${stuff.image}</th>
-    <th scope="col">${stuff.price}</th>
-    <th scope="col"><button class="edit">Edit</button></th>
-    <th scope="col"><button class= "del">X</button></th>
+    <th scope="col" class="id">${stuff.id}</th>
+    <td scope="col">${stuff.title}</td>
+    <td scope="col" class="pics"> <img src="${stuff.image}"  alt="" loading="lazy" class="adminPics" ></td>
+    <td scope="col">${stuff.price}</td>
+    <td scope="col"><button class="edit">Edit</button></td>
+    <td scope="col"><button class= "del">X</button></td>
     </tr>
     </tbody>
     </div>
     `
   });
+
+ let products = JSON.parse(localStorage.getItem('products'));
+let add = document.querySelector('#add')
+// Buttons
+let delete_button = document.querySelectorAll("#delete_btn")
+let nameBook = document.querySelector('#name')
+let author= document.querySelector('#author')
+let price = document.querySelector('#price')
+let picture = document.querySelector('#picture')
+let adminInput = document.querySelector('#adminInput')
+let title = document.querySelector('#title')
+// function delete_button() {
+//     del_btn = [...document.querySelectorAll("#delete_btn")];
+//     del_btn.forEach((products)=>{
+//         products.addEventListener('click', del)
+//     })
+// }
+// function del(event) {
+//     adminInput.innerHTML = ""
+//     let start = del_btn.indexOf(event.target);
+//     products.splice(start, 1);
+//     bookData()
+// }
+addbook.addEventListener('click', addData)
+function addData(e){
+    e.preventDefault();
+    if(nameBook.value == '' && author.value == ''){
+      alert('Inputs are empty')
+    } else{
+      products.push({
+          id: 1,
+          picture: picture.value,
+          name: nameBook.value,
+          title: title.value,
+          cost: price.value,
+      })
+    }
+    nameBook.value = ''
+    author.value = ''
+    price.value = ''
+    picture.value = ''
+    adminInput.value = ''
+    title.value = ''
+    bookData()
+    localStorage.setItem('products', JSON.stringify(products))
+}
+

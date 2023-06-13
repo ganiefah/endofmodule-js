@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/css/style.css">
     <!-- bootstrap link  -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="shortcut icon" href="https://i.postimg.cc/JhjCqkHY/Screenshot-2023-06-12-110255.png" type="image/x-icon"/>
     <title>Rooted Retreat</title>
 </head>
 <body>
@@ -45,53 +46,55 @@
           </div>
         </div>
       </nav>
-
-      <main>
-        <h4 class="display-1" id="checkout">Checkout</h4>
-        <div class="row">
-          <div class="col-75">
-            <div class="container1">
-              <form action="/action_page.php">
-                <div class="row">
-                  <div class="col-100">
-                    <!-- <h3>Billing Address</h3> -->
-                    <label for="name"><i class="fa fa-user"></i>Please Enter Full Name</label>
-                    <input type="text" id="fname" name="firstname" placeholder="John Slack" required="name"/>
-
-                    <label for="email"><i class="fa fa-envelope"></i> Please Enter Email Address:</label>
-                    <input type="text" id="email" name="email" placeholder="person@gmail.com" required="email"/>
-
-                    <label for="address"><i class="fa fa-address-card-o"></i>Street Address:</label>
-                    <input type="text"id="adr"name="address"placeholder="Street" required="street"/>
-
-                    <label for="city"><i class="fa fa-institution"></i>Suburb & Town/City :</label>
-                    <input type="text"id="city"name="city" placeholder="Parow & Cape Town" required="suburb"/>
-                    <div class="row">
-
-                      <div class="col-30">
-                        <label for="state">Province:</label>
-                        <input type="text" id="state"name="state"placeholder="Western Cape" required="province" />
-                      </div>
-
-                      <div class="col-30">
-                        <label for="zip">Postal Code:</label>
-                        <input type="text" id="zip" name="zip" placeholder="7500" required="postal" />
-                      </div>
-
-                    </div>
-                  </div>
-                  <div class="col-30">
-                    <h3>Payment</h3>
-                    <label for="cname">Name on Card</label>
-                    <input type="text" id="cname" name="cardname"placeholder="Name" required="nav-item"/>
-                    <label for="ccnum">Credit card number</label>
-                    <input type="text"id="ccnum" name="cardnumber" placeholder="xxxxxxxxxxxxxxxx" required="number"/>
-                    <label for="expmonth">Exp Month</label>
-                    <input type="text" id="expmonth" name="expmonth"placeholder="00/00" required="number"/>
-                      <div class="col-30">
-                        <label for="cvv">CVV</label>
-                        <input type="text" id="cvv" name="cvv"  placeholder="352" required="number" />
-    
+      
+      <div class="container-fluid">
+        <form action=""></form>
+        <h4>Enter Your Persoanl Details</h4>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Enter Your First Name</label>
+            <input type="name" name="name" class="form-control" id="exampleFormControlInput1" placeholder="Name" required="name">
+          </div>
+          <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Enter Your Last Name</label>
+              <input type="Surname" name="lastName" class="form-control" id="exampleFormControlInput1" placeholder="Surname" required="last name">
+          </div>
+          <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Enter You Email</label>
+              <input type="email" name="email" class="form-control" id="exampleFormControlInput1" placeholder="person@gmail.com" required="email">
+          </div>
+          <div class="mb-3">
+            <h4>Enter Your Shipping Address</h4>
+              <label for="exampleFormControlTextarea1" class="form-label">Street Address</label>
+              <input type="street" name="street" class="form-control" id="exampleFormControlInput1" placeholder="Imam Haroon Road" required="street">
+          </div>
+          <div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label">Suburb</label>
+              <input type="suburb" name="suburb" class="form-control" id="exampleFormControlInput1" placeholder="Landsdowne" required="suburb">
+          </div>
+          <div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label">Province</label>
+              <input type="province" name="province" class="form-control" id="exampleFormControlInput1" placeholder="Western Cape" required="province">
+          </div>
+          <div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label">Postal Code</label>
+              <input type="postalCode" name="postalCode" class="form-control" id="exampleFormControlInput1" placeholder="7764" required="postalCode">
+          </div>
+          <div class="mb-3">
+            <h4>Card Details</h4>
+              <label for="exampleFormControlTextarea1" class="form-label">Card Number</label>
+              <input type="cardNumber" name="cardNumber" class="form-control" id="exampleFormControlInput1" placeholder="Card Number" required="cardNumber">
+          </div>
+          <div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label">Expiration Date</label>
+              <input type="exp" name="exp" class="form-control" id="exampleFormControlInput1" placeholder="00/00" required="exp">
+          </div>
+          <div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label">CCV</label>
+              <input type="ccv" name="ccv" class="form-control" id="exampleFormControlInput1" placeholder="000" required="ccv">
+          </div>
+          <button class="btn" type="submit">Submit</button>
+          <button class="btn" type="reset">Clear</button>
+      </div>
 
       <!-- FOOTER  -->
       <footer class="container-fluid">
