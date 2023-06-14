@@ -1,213 +1,189 @@
+let data = JSON.parse(localStorage.getItem("products"))
+  // ? JSON.parse(localStorage.getItem("products"))
 
-let data= 
-    JSON.parse(localStorage.getItem("products")) ?
-    JSON.parse(localStorage.getItem("products")) :
-    localStorage.setItem('products', 
-    JSON.stringify(
-        [ 
-        {
-            id:1,
-            category: 'indoor',
-            title:'Paricha',
-            image: 'https://i.postimg.cc/9Qp0J7yQ/19248-Parchira-1.jpg',
-            price: 'R 650,00' ,
-            modal: 'A “money tree” is actually multiple Pachira aquatica trees braided together during growth. Pachira aquatica is a broadleaf evergreen native to Central and South America and has many common names including Good Luck Tree, Malabar chestnut, Guiana Chestnut, French Peanut, Saba Nut, Monguba, Pumpo, Provision Tree, and Wild Kapok Tree.',
-        },
-        {
-            id:2,
-            category: 'indoor',
-            title:'Dracaena',
-            image: 'https://i.postimg.cc/fTkBSCzj/17634-Dracaena.jpg',
-            price: 'R 770,00' ,
-            modal: ' Dracaena is one of the indoor plants that help reduce indoor pollution levels. Increase humidity: The plant releases water vapour and increases moisture levels in air, thus, reducing dry-air conditions. Ornamental purpose: These indoor plants help beautify home interiors.',
-        },
-        {
-            id:3,
-            category: 'indoor',
-            title:'Caladium',
-            image: 'https://i.postimg.cc/hjZgMsHb/18147-Caladium.jpg',
-            price: 'R 390,00' ,
-            modal: ' Caladiums are tropical plants known for their big, heart-shaped leaves that display amazing color combinations of white, pink, red and green. Though caladiums rarely flower, their foliage guarantees a colorful show wherever they are planted -- beneath trees, between shrubs, in perennial borders or in containers.',
-        },
-        {
-            id:4,
-            category: 'indoor',
-            title:'Monstera',
-            image: 'https://i.postimg.cc/mgh8vwz6/17753-Monstera.jpg',
-            price: 'R 180,00' ,
-            modal: 'Monstera deliciosa is a favourite plant among decorators thanks to its dramatic and unusual leaves, and it is also an ideal plant to attract money and good fortune according to Feng Shui.',
-        },{
-            id:5,
-            category: 'outdoor',
-            title:'Oak Bonsai Tree',
-            image: 'https://i.postimg.cc/0Qnrv7hb/20992-Oak-Bonsai-Tree.jpg',
-            price: 'R 490,00' ,
-            modal: "Oak bonsai trees have a tremendous and stately appearance—deep, dark green lobes with show-stopping form. Potential hollows in the trunk and moderately coarse branching systems are the features that make the white oak like no other."
-          },
-          {
-            id:6,
-            category: 'outdoor',
-            title:'Fern Tree',
-            image: 'https://i.postimg.cc/j2RBBNQM/14881-Fern-Tree.jpg',
-            price: 'R 500,00' ,
-            modal: ' Apart from enhancing the aesthetics, they are also useful in removing harmful air pollutants from the environment. The  Ferns not only spruce up the air quality but also improve the humidity levels by restoring moisture to the air naturally, which gives a soothing effect.',
-          },
-          {
-            id:7,
-            category: 'outdoor',
-            title:'Olive Tree',
-            image: 'https://i.postimg.cc/63N95MNc/19849-Olive-Tree.jpg',
-            price: 'R 350,00' ,
-            modal: 'Olive leaf extract comes from the leaves of an olive plant. It contains an active ingredient called oleuropeinTrusted Source. This nutrient is thought to contribute to the anti-inflammatory and antioxidant properties of olive leaf extract.',
-          },
-          {
-            id:8,
-            category: 'outdoor',
-            title:'Bay Tree',
-            image: 'https://i.postimg.cc/446rgJdr/19857-Bay-Tree.jpg',
-            price: 'R 950,00' ,
-            modal: ' The bay tree is used as a valuable flavoring agent in the culinary and food industry. This plant is used in folk medicine, in stomachic and carminative remedies, and for the treatment of digestive disease.',
-          },{
-            id:9,
-            category: 'best sellers',
-            title:'Snowball Tree',
-            image: 'https://i.postimg.cc/bNMW4yjc/19819-Snowball-Tree-B.jpg',
-            price: 'R 1050,00' ,
-            modal: "Huge heads of white, hydrangea-like flowers are the main feature of this spectacular, spring-flowering shrub that enjoys a cool position. Since the flowers are the main attraction, its foliage is not as important as with other viburnums, but it does gain colour in autumn.  ."
-          },
-          {
-            id:10,
-            category: 'best sellers',
-            title:'Zebrina Plant',
-            image: 'https://i.postimg.cc/QtW7K8VD/Screenshot-2023-06-12-141357.png',
-            price: 'R 425,00' ,
-            modal: ' Apart from enhancing the aesthetics, they are also useful in removing harmful air pollutants from the environment. The  Ferns not only spruce up the air quality but also improve the humidity levels by restoring moisture to the air naturally, which gives a soothing effect.',
-          },
-          {
-            id:11,
-            category: 'best sellers',
-            title:'String Of Pearls Plant',
-            image: 'https://i.postimg.cc/yNZ5xB14/Screenshot-2023-06-12-141105.png',
-            price: 'R 400,00' ,
-            modal: 'Our string of pearls is an eye-catching trailing succulent that simply takes the outdoors in, providing a touch of greenery to any room and is ideal for placing on shelves and sideboards. It comes in a sturdy and stylish cement pot that accentuates and complements a range of home décor styles for maximum versatility.',
-          },
-          {
-            id:12,
-            category: 'best sellers',
-            title:'Onion Grass ',
-            image: 'https://i.postimg.cc/4xsNzJ2G/Screenshot-2023-06-12-142111.png',
-            price: 'R 430,00' ,
-            modal: 'Take this magnificent onion grass with a touch of the wild to bring in the outdoors; it is the ideal decorative element to liven up your living space instantly. It comes in a sturdy and stylish cement pot that accentuates and complements a range of home décor styles for maximum versatility.',
-          },
-          {
-            id:13,
-            category: 'sale',
-            title:'Biogrow Biotrissol ',
-            image: 'https://i.postimg.cc/Ls6Ttfkn/biogrow-biotrissol-organic-liquid-fertilizer-sku3824.jpg',
-            price: 'R 50,00',
-            modal: "This organic liquid fertilizer is a natural fermentation product gained from processing sugar beet. It contains a combination of essential nutrients in an organically assimilated form. The vitamins, ferments and growth-promoting substances contained in Biotrissol strengthen the plants and promote the formation of blooms. Biotrissol also provides nutrients for the micro-organisms in the soil and thus help to reactivate the soil."
-          },
-          {
-            id:14,
-            category: 'sale',
-            title:'Biogrow Pyrol (Insecticide)',
-            image: 'https://i.postimg.cc/CxWvgdb1/biogrow-pyrol-insecticide-250ml-sku3827v1-1.png',
-            price:'R 60,00',
-            modal: 'This product provides broad-spectrum control. It can be used as a dormant and growing season insect spray and kills all stages of insects, including eggs, on contact. It is a proprietary formulation consisting only of naturally occurring plant oils as active ingredients. It is truly an insecticide from plants for plants. It does not contain piperonyl butoxide as a synergist, and the active ingredients do not persist in the environment.',
-          },
-          {
-            id:15,
-            category: 'sale',
-            title:'Biogrow Copper (Fungicide)',
-            image: 'https://i.postimg.cc/GmJBc5yy/biogrow-copper-soap-fungicide-sku3825.jpg',
-            price: 'R 100,00',
-            modal: 'This product will control fungal diseases such as: Powdery mildew and downy mildew on vegetables and ornamentals; rust on ornamentals.',
-          },
-          {
-            id:16,
-            category: 'sale',
-            title:'Natural Herbicidal Soap',
-            image: 'https://i.postimg.cc/L5kdqwFc/biogrow-finalsan-natural-herbicidal-soap-sku3830.jpg',
-            price: 'R 75,00' ,
-            modal: 'Finalsan is a natural herbicide for the control of annual weeds, moss and algae. The active ingredients are naturally occurring fatty acids extracted from plants. They are soft on the environment and safe to use. Finalsan will control moss and algae on structural surfaces and does not stain concrete, brick or wood surfaces.',
-          },
-        ]
+showProducts();
 
-    ))
-
-    console.log(data);
-
-    Object.keys(data).forEach((products) =>{    
+function showProducts() {
+  Object.keys(data).forEach((products) => {
     let stuff = data[products];
-    let p = document.querySelector('#admin');
+    let p = document.querySelector("#admin");
     console.log(data[products]);
-    p.innerHTML +=`
-    <div class="table">
-    <tbody id="admin">
-    <tr>
-    <th scope="col" class="id">${stuff.id}</th>
-    <td scope="col">${stuff.title}</td>
-    <td scope="col" class="pics"> <img src="${stuff.image}"  alt="" loading="lazy" class="adminPics" ></td>
-    <td scope="col">${stuff.price}</td>
-    <td scope="col"><button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#editModal">
-    Edit
-  </button>
-  <!-- Modal -->
-  <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="editModalLabel">Edit your product</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-        <form>
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">ID:</label>
-          <input type="ID" class="form-control" id="idAdmin" aria-describedby="emailHelp">
-        </div>
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Product name:</label>
-          <input type="Product" class="form-control" id="name" aria-describedby="emailHelp">
-        </div>
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Image URL:</label>
-          <input type="text" class="form-control" id="imageUrl" aria-describedby="emailHelp">
-        </div>
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Price:</label>
-          <input type="Price" class="form-control" id="priceAdmin" aria-describedby="emailHelp">
-        </div>
-      </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" id="saveBtn">Save changes</button>
+    p.innerHTML += `
+        <div class="table">
+        <tbody id="admin">
+        <tr>
+        <th scope="col" class="id">${stuff.id}</th>
+        <td scope="col" class="title">${stuff.title}</td>
+        <td scope="col" class="pics"> <img src="${stuff.image}"  alt="" loading="lazy" class="adminPics" ></td>
+        <td scope="col" class="prices">${stuff.price}</td>
+        <td scope="col"><button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#editModal">
+        Edit
+      </button>
+      <!-- Modal -->
+      <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="editModalLabel">Edit your product</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            <form>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">ID:</label>
+              <input type="ID" class="form-control" id="idAdmin${stuff.id}" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Product name:</label>
+              <input type="Product" class="form-control" id="name${stuff.id}" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Image URL:</label>
+              <input type="text" class="form-control" id="imageUrl${stuff.id}" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Price:</label>
+              <input type="number" class="form-control" id="priceAdmin${stuff.id}" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Description</label>
+              <input type="Price" class="form-control" id="adminDesc${stuff.id}" aria-describedby="emailHelp">
+            </div>
+          </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" id="saveBtn">Save changes</button>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</td>
-    <td scope="col"><button class="del" id="delete">X</button></td>
-    </tr>
-    </tbody>
-    </div>
-    `
+    </td>
+        <td scope="col"><button class="del" id="delete">X</button></td>
+        </tr>
+        </tbody>
+        </div>
+        `;
   });
+  deleteItems();
+  editItems();
+}
 
-const deleteButtons = [...document.querySelectorAll('#delete')]
+// delete button 
+function deleteItems() {
+const deleteButtons = [...document.querySelectorAll("#delete")];
+deleteButtons.forEach((dell, i) => {
+  dell.addEventListener("click", (e) => {
+    console.log(e.target);
+    let row = e.target.parentElement.parentElement;
+    console.log(row);
+    row.remove();
+    data.splice(e.target[i], 1);
+    localStorage.setItem("products", JSON.stringify(data));
+    console.log(data);
+  });
+});
+}
+// Delete Btn
+// function deleteButton(){
+//   deleteBtn = [...document.querySelectorAll('#deleteBtn')];
+//   deleteBtn.forEach((item) => {
+//       item.addEventListener('click', deleteProduct)
+//   })
+// }
+// function deleteProduct(event) {
+//   event.preventDefault()
+//   let startingItem = deleteBtn.indexOf(event.target);
+//   productArray.splice(startingItem, 1);
+//   localStorage.setItem('products', JSON.stringify(productArray))
+//   render()
+// }
+// figure out tonight 
 
-deleteButtons.forEach((dell,i)=>{
-  console.log(dell)
-  dell.addEventListener('click',(e)=>{
-    console.log(e.target)
-    let row = e.target.parentElement.parentElement
-    console.log(row)
-    row.remove()
-    console.log(data[i])
-    data.splice(e.target[i],1)
-    localStorage.setItem('products',JSON.stringify(data))
-    console.log(data)
-  })
+// let idOption = document.querySelector('#id-desc')
+// let priceOption = document.querySelector('#price-desc')
+
+// idOption.addEventListener('change', ()=>{
+//     let option = idOption.value 
+
+//     if(option === 'id'){
+//         data.sort((a,b) => a.id - b.id) // Ascending sort for ID
+//         showProducts()
+//     } else if(option === 'id-desc'){
+//         data.sort((a,b) => b.id - a.id) // Descending sort for ID
+//         showProducts()
+//     }
+// })
+
+priceOption.addEventListener('change', ()=>{
+    let option = priceOption.value 
+
+    if(option === 'price'){
+        data.sort((a,b) => a.price - b.price) // Ascending sort for ID
+        showProducts()
+    } else if(option === 'price-desc'){
+        data.sort((a,b) => b.price - a.price) // Descending sort for ID
+        showProducts()
+        console.log(data);
+    }
 })
 
+
+function editItems() {
+  console.log("HELLO I WORK!");
+  const saveButtons = [...document.querySelectorAll("#saveBtn")];
+  saveButtons.forEach((save, i) => {
+    save.addEventListener("click", (e) => {
+      e.preventDefault()
+      // let index = saveButton.indexOf(e.target)
+      let changeId = [...document.querySelectorAll('#idAdmin')]
+      let changeName = [...document.querySelectorAll("#name")];
+      let changeImage = [...document.querySelectorAll("#imageUrl")];
+      let changeDesc = [...document.querySelectorAll("#adminDesc")];
+      let changePrice = [...document.querySelectorAll("#priceAdmin")];
+      let itemId = [...document.querySelectorAll('.id')]
+      let itemNames = [...document.querySelectorAll(".title")];
+      let itemPrices = [...document.querySelectorAll(".prices")];
+      let itemImages = [...document.querySelectorAll(".pics")];
+      console.log(changeDesc[i]);
+      let newId = (itemId[i].innerText = changeId[i].value)
+      let newName = (itemNames[i].innerText = changeName[i].value);
+      let newPrice = (itemPrices[i].innerText = changePrice[i].value);
+      let newImage = itemImages[i].setAttribute("src", changeImage.value);
+      console.log(data[i]);
+      let newerContent = {
+        id:newId,
+        name: newName,
+        image: newImage,
+        desc: changeDesc[i].value,
+        price: newPrice,
+      };
+      data[i] = newerContent;
+      let p = document.querySelector("#admin");
+      console.log(data);
+      localStorage.setItem("productData",JSON.stringify(data))
+      p.innerHTML = "";
+      let modal = document.querySelector(".modal-backdrop");
+      modal.style.display = "none";
+      showProducts();
+  });
+})
+}
+
+function addItems() {
+  console.log("I WORK");
+  let id = document.querySelector("#idAdmin");
+  let name = document.querySelector("#name");
+  let image = document.querySelector("#imageUrl");
+  let price = document.querySelector("#priceAdmin");
+  let newPartOfArray = {
+    id: id.value,
+    name: name.value,
+    image: image.value,
+    price: price.value,
+  };
+  data.push(newPartOfArray);
+  let g = document.querySelector("#admin");
+  g.innerHTML = "";
+  showProducts();
+}
