@@ -75,124 +75,119 @@
         <div
           class="row d-flex justify-content-between flex-md-row flex-column gap-2"
         >
-          <div>
-            <p>Sort By ID</p>
-            <select
-              class="form-select mb-5 w-100"
-              aria-label="Default select example"
-              id="id-desc"
+          <div class="koppe">
+            <!-- Button trigger modal -->
+            <div class="mod">
+              <button
+                type="button"
+                class="btn btn-light"
+                id="add"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
+                Add new products
+              </button>
+            </div>
+            <!-- Modal -->
+            <div
+              class="modal fade"
+              id="exampleModal"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
             >
-              <option selected>Sort</option>
-              <option value="id">ID</option>
-              <option value="id-desc">ID - Desc</option>
-            </select>
-          </div>
-          <div>
-            <p>Sort By Price</p>
-            <select
-              class="form-select mb-5 w-100"
-              aria-label="Default select example"
-              id="price-desc"
-            >
-              <option selected>Sort</option>
-              <option value="price">Price</option>
-              <option value="price-desc">Price - Desc</option>
-            </select>
-          </div>
-          <!-- Button trigger modal -->
-          <button
-            type="button"
-            class="btn btn-light"
-            onclick="addItems()"
-            id="add"
-            data-bs-toggle="modal"
-            data-bs-target="#exampleModal"
-          >
-            Add new products
-          </button>
-          <!-- Modal -->
-          <div
-            class="modal fade"
-            id="exampleModal"
-            tabindex="-1"
-            aria-labelledby="exampleModalLabel"
-            aria-hidden="true"
-          >
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel">
-                    Add a product
-                  </h1>
-                  <button
-                    type="button"
-                    class="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  ></button>
-                </div>
-                <div class="modal-body">
-                  <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label"
-                      >Name</label
-                    >
-                    <input type="catalog" class="form-control" id="name" />
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                      Add a product
+                    </h1>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
                   </div>
-                  <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label"
-                      >Title</label
-                    >
-                    <input type="title" class="form-control" id="title" />
+                  <div class="modal-body">
+                    <div class="mb-3">
+                      <label for="exampleFormControlInput1" class="form-label"
+                        >Id</label
+                      >
+                      <input type="number" class="form-control" id="id" />
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleFormControlInput1" class="form-label"
+                        >Title</label
+                      >
+                      <input type="text" class="form-control" id="titleName" />
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleFormControlInput1" class="form-label"
+                        >Description</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="descriptionAdd"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleFormControlInput1" class="form-label"
+                        >Price</label
+                      >
+                      <input type="number" class="form-control" id="price" />
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleFormControlInput1" class="form-label"
+                        >Picture</label
+                      >
+                      <input type="picture" class="form-control" id="picture" />
+                    </div>
                   </div>
-                  <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label"
-                      >Price</label
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                      id="close"
                     >
-                    <input type="number" class="form-control" id="price" />
-                  </div>
-                  <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label"
-                      >Picture</label
+                      Close
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-primary"
+                      id="addbook"
+                      onclick="addItems()"
                     >
-                    <input type="picture" class="form-control" id="picture" />
+                      Save changes
+                    </button>
                   </div>
-                </div>
-                <div class="modal-footer">
-                  <button
-                    type="button"
-                    class="btn btn-secondary"
-                    data-bs-dismiss="modal"
-                    id="close"
-                  >
-                    Close
-                  </button>
-                  <button
-                    type="button"
-                    class="btn btn-primary"
-                    id="addbook"
-                    onclick="addItems()"
-                  >
-                    Save changes
-                  </button>
                 </div>
               </div>
             </div>
+            <button class="btn" id="sort" onclick="sortProduct()">
+              Sort by price
+          </button>
           </div>
         </div>
         <div class="row">
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Products</th>
-                <th scope="col">Image</th>
-                <th scope="col">Price</th>
-                <th scope="col">Edit</th>
-                <th scope="col">Delete</th>
-              </tr>
-            </thead>
-            <tbody id="admin"></tbody>
-          </table>
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">ID</th>
+                  <td scope="col">Products</td>
+                  <td scope="col">Image</td>
+                  <td scope="col">Description</td>
+                  <td scope="col">Price</td>
+                  <td scope="col">Edit</td>
+                  <td scope="col">Delete</td>
+                </tr>
+              </thead>
+              <tbody id="admin"></tbody>
+            </table>
+          </div>
         </div>
       </div>
     </main>
