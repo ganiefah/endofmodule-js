@@ -1,3 +1,5 @@
+
+let result = document.querySelector("#admin")
 let data = JSON.parse(localStorage.getItem("products"))
   // ? JSON.parse(localStorage.getItem("products"))
 
@@ -7,7 +9,7 @@ function showProducts() {
   Object.keys(data).forEach((products) => {
     let stuff = data[products];
     let p = document.querySelector("#admin");
-    console.log(data[products]);
+    // console.log(data[products]);
     p.innerHTML += `
         <div class="table">
         <tbody id="admin">
@@ -15,12 +17,13 @@ function showProducts() {
         <th scope="col" class="id">${stuff.id}</th>
         <td scope="col" class="title">${stuff.title}</td>
         <td scope="col" class="pics"> <img src="${stuff.image}"  alt="" loading="lazy" class="adminPics" ></td>
+        <td scope="col" class="description">${stuff.modal}</td>
         <td scope="col" class="prices">${stuff.price}</td>
-        <td scope="col"><button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#editModal">
+        <td scope="col"><button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#editModal${stuff.id}">
         Edit
       </button>
       <!-- Modal -->
-      <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+      <div class="modal fade" id="editModal${stuff.id}" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -31,159 +34,131 @@ function showProducts() {
             <form>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">ID:</label>
-              <input type="ID" class="form-control" id="idAdmin${stuff.id}" aria-describedby="emailHelp">
+              <input type="ID" class="form-control" id="idAdmin${stuff.id}" aria-describedby="emailHelp" value="${stuff.id}">
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Product name:</label>
-              <input type="Product" class="form-control" id="name${stuff.id}" aria-describedby="emailHelp">
+              <input type="Product" class="form-control" id="name${stuff.id}" aria-describedby="emailHelp" value="${stuff.title}">
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Image URL:</label>
-              <input type="text" class="form-control" id="imageUrl${stuff.id}" aria-describedby="emailHelp">
+              <input type="text" class="form-control" id="imageUrl${stuff.id}" aria-describedby="emailHelp" value="${stuff.image}">
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Price:</label>
-              <input type="number" class="form-control" id="priceAdmin${stuff.id}" aria-describedby="emailHelp">
+              <input type="text" class="form-control" id="priceAdmin${stuff.id}" aria-describedby="emailHelp" value="${stuff.price}">
             </div>
             <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Description</label>
-              <input type="Price" class="form-control" id="adminDesc${stuff.id}" aria-describedby="emailHelp">
-            </div>
+            <label for="exampleInputEmail1" class="form-label">Description:</label>
+            <textarea class="form-control" id="description${stuff.id}">${stuff.modal}</textarea>
+          </div>
           </form>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary" id="saveBtn">Save changes</button>
+              <button type="button" class="btn btn-primary" id="saveBtn" onclick='new EditItems(${JSON.stringify(stuff)})'>Save changes</button>
             </div>
           </div>
         </div>
       </div>
     </td>
-        <td scope="col"><button class="del" id="delete">X</button></td>
+    <td><button id="delButton" onclick="deleteButtons()">Delete</button></td>
         </tr>
         </tbody>
         </div>
         `;
   });
-  deleteItems();
-  editItems();
-}
+  deleteButtons();
+}    
 
-// delete button 
-function deleteItems() {
-const deleteButtons = [...document.querySelectorAll("#delete")];
-deleteButtons.forEach((dell, i) => {
-  dell.addEventListener("click", (e) => {
-    console.log(e.target);
-    let row = e.target.parentElement.parentElement;
-    console.log(row);
-    row.remove();
-    data.splice(e.target[i], 1);
-    localStorage.setItem("products", JSON.stringify(data));
-    console.log(data);
+// edit button
+function EditItems(item){
+  // location.reload();
+  let beginning = data.findIndex( p=>{
+      return p.id == item.id 
   });
-});
-}
-// Delete Btn
-// function deleteButton(){
-//   deleteBtn = [...document.querySelectorAll('#deleteBtn')];
-//   deleteBtn.forEach((item) => {
-//       item.addEventListener('click', deleteProduct)
-//   })
-// }
-// function deleteProduct(event) {
-//   event.preventDefault()
-//   let startingItem = deleteBtn.indexOf(event.target);
-//   productArray.splice(startingItem, 1);
-//   localStorage.setItem('products', JSON.stringify(productArray))
-//   render()
-// }
-// figure out tonight 
 
-// let idOption = document.querySelector('#id-desc')
-// let priceOption = document.querySelector('#price-desc')
-
-// idOption.addEventListener('change', ()=>{
-//     let option = idOption.value 
-
-//     if(option === 'id'){
-//         data.sort((a,b) => a.id - b.id) // Ascending sort for ID
-//         showProducts()
-//     } else if(option === 'id-desc'){
-//         data.sort((a,b) => b.id - a.id) // Descending sort for ID
-//         showProducts()
-//     }
-// })
-
-priceOption.addEventListener('change', ()=>{
-    let option = priceOption.value 
-
-    if(option === 'price'){
-        data.sort((a,b) => a.price - b.price) // Ascending sort for ID
-        showProducts()
-    } else if(option === 'price-desc'){
-        data.sort((a,b) => b.price - a.price) // Descending sort for ID
-        showProducts()
-        console.log(data);
-    }
-})
-
-
-function editItems() {
-  console.log("HELLO I WORK!");
-  const saveButtons = [...document.querySelectorAll("#saveBtn")];
-  saveButtons.forEach((save, i) => {
-    save.addEventListener("click", (e) => {
-      e.preventDefault()
-      // let index = saveButton.indexOf(e.target)
-      let changeId = [...document.querySelectorAll('#idAdmin')]
-      let changeName = [...document.querySelectorAll("#name")];
-      let changeImage = [...document.querySelectorAll("#imageUrl")];
-      let changeDesc = [...document.querySelectorAll("#adminDesc")];
-      let changePrice = [...document.querySelectorAll("#priceAdmin")];
-      let itemId = [...document.querySelectorAll('.id')]
-      let itemNames = [...document.querySelectorAll(".title")];
-      let itemPrices = [...document.querySelectorAll(".prices")];
-      let itemImages = [...document.querySelectorAll(".pics")];
-      console.log(changeDesc[i]);
-      let newId = (itemId[i].innerText = changeId[i].value)
-      let newName = (itemNames[i].innerText = changeName[i].value);
-      let newPrice = (itemPrices[i].innerText = changePrice[i].value);
-      let newImage = itemImages[i].setAttribute("src", changeImage.value);
-      console.log(data[i]);
-      let newerContent = {
-        id:newId,
-        name: newName,
-        image: newImage,
-        desc: changeDesc[i].value,
-        price: newPrice,
-      };
-      data[i] = newerContent;
-      let p = document.querySelector("#admin");
-      console.log(data);
-      localStorage.setItem("productData",JSON.stringify(data))
-      p.innerHTML = "";
-      let modal = document.querySelector(".modal-backdrop");
-      modal.style.display = "none";
-      showProducts();
-  });
-})
-}
+  this.id = document.querySelector(`#idAdmin${item.id}`).value
+  this.title = document.querySelector(`#name${item.id}`).value
+  this.image = document.querySelector(`#imageUrl${item.id}`).value
+  this.price = document.querySelector(`#priceAdmin${item.id}`).value 
+  this.modal = document.querySelector(`#description${item.id}`).value
+  data[beginning] = Object.assign({}, this)
+  localStorage.setItem('products', JSON.stringify(data))
+  location.reload()
+ showProducts()
+  
+} 
 
 function addItems() {
-  console.log("I WORK");
-  let id = document.querySelector("#idAdmin");
-  let name = document.querySelector("#name");
-  let image = document.querySelector("#imageUrl");
-  let price = document.querySelector("#priceAdmin");
+  let p = document.querySelector("#admin");
+
+  let id = document.querySelector("#id");
+  let title = document.querySelector("#titleName");
+  let modal = document.querySelector("#descriptionAdd");
+  let image = document.querySelector("#picture");
+  let price = document.querySelector("#price");
   let newPartOfArray = {
+ 
     id: id.value,
-    name: name.value,
+    name: title.value,
+    modal: modal.value,
     image: image.value,
     price: price.value,
   };
   data.push(newPartOfArray);
-  let g = document.querySelector("#admin");
-  g.innerHTML = "";
+  console.log(data)
+  p.innerHTML = ''
+  // let g = document.querySelector("#admin");
+  // g.innerHTML = "";
+  localStorage.setItem("products", JSON.stringify(data))
   showProducts();
+}
+
+
+function deleteButtons(){
+  dButton = [...document.querySelectorAll('#delButton')];
+  dButton.forEach((item)=>{
+      item.addEventListener('click', deleteProduct)
+      localStorage.setItem("products", JSON.stringify(data));
+})
+}
+function deleteProduct(event){
+  result.innerHTML= ""
+  let begin = dButton.indexOf(event.target);
+  data.splice(begin, 1);
+  localStorage.setItem("products", JSON.stringify(data));
+  showProducts()
+}
+
+
+// Sort button
+let asc = true;
+function sortProduct(){
+  console.log(parseInt(data[0].price.split(' ')[1]))
+if(asc === true){
+  asc = false;
+  data= data.sort((a, b) => {
+    if (parseInt(a.price.split(' ')[1]) < parseInt(b.price.split(' ')[1])) {
+        return -1;
+    } else if (parseInt(a.price.split(' ')[1]) > parseInt(b.price.split(' ')[1])) {
+        return 1;
+    } else {
+      return 0;
+    }
+});
+} else {
+  asc = true
+data= data.sort((a, b) => {
+      if (parseInt(a.price.split(' ')[1]) < parseInt(b.price.split(' ')[1])) { 
+          return 1;
+      } else if (parseInt(a.price.split(' ')[1]) > parseInt(b.price.split(' ')[1])) {
+          return -1;
+      } else {
+        return 0;
+      }
+  });
+}
+result.innerHTML = '';
+showProducts();
 }

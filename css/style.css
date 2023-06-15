@@ -17,13 +17,14 @@ body{
 }
 
 .navbar{
-    background-color: transparent ;
+    background-color: rgb(119, 210, 119) ;
+    
 }
 
 /* navlink  */
 .nav-link{
     color: black !important;
-    border-bottom: 1px solid #867f7f !important;
+    border-bottom: 1px solid #ffffff !important;
     margin: 1rem !important;
 }
 
@@ -113,6 +114,7 @@ text-align: center !important;
 /* Products */
 .card{
     width: 18rem;
+    margin-bottom: 1rem !important;
 }
 .head{
     text-align: center;
@@ -181,7 +183,53 @@ textarea{
     border-radius: 5px;
 }
 
+#add{
+    width: 13rem;
+    height: 2.7rem;
+    padding: 10px ;
+    /* float: left  !important; */
+    background-color: rgb(119, 210, 119);
+    color: white;
+}
 
+#add:hover{
+     background-color:rgb(162, 212, 162)!important;
+     color: black;
+}
+
+#sort{
+    width: 13rem;
+    height: 2.7rem;
+    padding: 10px ;
+    background-color: rgb(119, 210, 119);
+    color: white;
+}
+
+#sort:hover{
+     background-color:rgb(162, 212, 162)!important;
+     color: black;
+}
+
+#id-desc{
+    width: 15rem !important;
+}
+
+#price-desc{
+    width: 15rem !important;
+}
+
+.koppe{
+    display: flex;
+    justify-content: space-evenly;
+
+}
+.mod{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
 
 .add:hover{
     background-color: grey;
@@ -254,10 +302,168 @@ table,
 
   /* footer  */
 footer{
-    background-color: transparent !important;
+    background-color:rgb(119, 210, 119) !important;
     color:  rgb(73, 69, 69) !important;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+nav {
+    width: 100%;
+    height: 10vh;
+    background: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em 1em;
+    color: #fff;
+  }
+
+  .hhh {
+    font-size: 2rem;
+  }
+  
+  .nav_bag {
+    margin-top: 1.5rem;
+    margin-left: 54rem;
+    font-size: 2rem;
+  }
+  .cart_container {
+    height: 100vh;
+    width: 500px;
+    position: fixed;
+    background: black;
+    color: white;
+    z-index: 2;
+    top: 0;
+    bottom: 0;
+    overflow: auto;
+    right: -500px;
+    transition: 0.5s ease-in;
+  }
+  
+  .cart_container.active {
+    right: 0;
+  }
+  
+  .close_icon {
+    position: absolute;
+    right: 10;
+    top: 10;
+    color: gray;
+    cursor: pointer;
+  }
+  
+  .cart_container_title {
+    display: grid;
+    place-content: center;
+    margin-top: 3em;
+  }
+  
+  .cartProduct,
+  .cart_product_flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.5em 0;
+  }
+  
+  .cart_product_img,
+  .cart_product_title {
+    margin: 0 0.5em;
+  }
+  
+  .cart_img {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .bxs-trash-alt {
+    font-size: 20px;
+    color: #ff0000;
+    cursor: pointer;
+  }
+
+
+
+  .ra:hover {
+    transform: scale(1.4);
+  }
+  
+  .bxs-trash-alt:hover {
+    color: #c40909;
+  }
+  
+  .cart_amount {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .decrement,
+  .increment {
+    margin: 0 0.5em;
+    cursor: pointer;
+  }
+  
+  .cartTotalPrice {
+    text-align: center;
+    margin: 2em 0 0 0;
+  }
+  
+  .clearCart {
+    margin: 2em 0;
+    text-align: center;
+    cursor: pointer;
+  }
+  .btn_clear {
+    padding: 10px 20px;
+    border: none;
+    background-color: #f12a12;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .btn_clear:hover {
+    background-color: #ff0000;
+  }
+
+  .cart {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 10px;
+    border-radius: 3px;
+    width: 80px;
+  }
+  
+  .contact:hover {
+    transform: scale(1.2);
+    transition: all 0.5s ease-out;
+  }
+  
+  #cart-items {
+    margin-top: 30px;
+  }
+  
+  .cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .item-name {
+    flex-grow: 1;
+  }
+  
+  .item-price {
+    margin-left: 10px;
+  }
+  
+  #total-price {
+    margin-top: 20px;
+    text-align: right;
+    font-weight: bold;
+  }
