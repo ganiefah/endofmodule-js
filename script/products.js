@@ -188,6 +188,14 @@ that.innerHTML = '';
 displayData();
 }
 
+//add to cart
+let addToCart = document.querySelector('#addToCart')
+let checkoutStorage = [];
+function addCheckoutItem(index) {
+  checkoutStorage.push(products[index])
+  localStorage.setItem('checkoutStorage', JSON.stringify(checkoutStorage))
+  alert('It was ADDED!')
+}
 
 let wrapper = document.querySelector("#product");
 let dropDown = document.querySelector("#category");
@@ -261,5 +269,6 @@ function displayData(category = "all") {
       `;
   });
 }
+
 
 displayData();

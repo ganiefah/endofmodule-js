@@ -73,7 +73,6 @@ function showProducts() {
 
 // edit button
 function EditItems(item){
-  // location.reload();
   let beginning = data.findIndex( p=>{
       return p.id == item.id 
   });
@@ -90,6 +89,8 @@ function EditItems(item){
   
 } 
 
+
+//add items
 function addItems() {
   let p = document.querySelector("#admin");
 
@@ -115,7 +116,7 @@ function addItems() {
   showProducts();
 }
 
-
+//deletebutton
 function deleteButtons(){
   dButton = [...document.querySelectorAll('#delButton')];
   dButton.forEach((item)=>{
